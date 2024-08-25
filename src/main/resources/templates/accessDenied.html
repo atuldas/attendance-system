@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${errorMessage}">Error</h1>
+    <p>Sorry, something went wrong or you may not have rights for this page.</p>
+    <a th:href="@{/welcome}" class="btn btn-primary">Go to Home</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Attendance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Attendance for <span th:text="${username}"></span></h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Present</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="attendance : ${attendances}">
+            <td th:text="${attendance.date}">2024-08-21</td>
+            <td th:text="${attendance.present ? 'Yes' : 'No'}">Yes</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <!-- Button container -->
+    <div class="btn-container">
+        <!-- Back button -->
+        <a th:href="@{/welcome}" class="btn btn-secondary">Back</a>
+
+        <!-- Logout button -->
+        <a th:href="@{/logout}" class="btn btn-danger">Logout</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>User List</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Actions</th> <!-- Added a new column for actions -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.username}">JohnDoe</td>
+            <td th:text="${user.role}">Admin</td>
+            <td>
+                <!-- Edit Button -->
+                <a th:href="@{/user/updateUser/{username}(username=${user.username})}" class="btn btn-primary btn-sm">Edit</a>
+            <form th:action="@{/user/delete/{username}(username=${user.username})}" method="post" style="display:inline;">
+                    <input type="hidden" name="_method" value="delete">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <!-- Button container -->
+    <div class="btn-container">
+        <!-- Back button -->
+        <a th:href="@{/welcome}" class="btn btn-secondary">Back</a>
+
+        <!-- Logout button -->
+        <a th:href="@{/logout}" class="btn btn-danger">Logout</a>
+    </div>
+</div>
+
+
+</body>
+</html>

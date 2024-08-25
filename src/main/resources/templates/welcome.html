@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to the Attendance Management System</h1>
+    <p>Select an operation below:</p>
+    <div class="list-group">
+        <h3>User Operations</h3>
+        <a th:href="@{/user/create}" class="list-group-item list-group-item-action">Create User</a>
+        <!-- Show All Users option -->
+        <a th:href="@{/user/allusers}" class="list-group-item list-group-item-action">Show All Users</a>
+    </div>
+    <div class="list-group mt-4">
+        <h3>Attendance Operations</h3>
+        <a th:href="@{/attendance/}" class="list-group-item list-group-item-action">Mark Attendance</a>
+        <a th:href="@{/attendance/view}" class="list-group-item list-group-item-action">View Attendance</a>
+    </div>
+    <a th:href="@{/logout}" class="btn btn-danger mt-4">Logout</a>
+</div>
+</body>
+</html>
