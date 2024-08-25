@@ -1,4 +1,3 @@
-# attendance-system
 # Attendance Management System
 
 This is a simple Attendance Management System built with Spring Boot and Thymeleaf. It allows users to mark attendance with validation to ensure that attendance is only marked for today or future dates and only once per day.
